@@ -1,0 +1,14 @@
+.sliderbar{
+    width: 30%;
+    height: 100vh;
+    background-color: #040404;
+    color: white;
+    min-width: 230px;
+    padding:0 10px;
+   
+}
+.sidebar__logo{
+    height: 70px;
+    padding: 10px;
+    margin-right: auto;
+}

@@ -1,0 +1,10 @@
+.body{
+    width: 70%;
+    height: 100vh;
+    color: white;
+    background: linear-gradient(rgb(2, 104, 7),rgb(3, 153, 11),rgba(0,0,0,1));
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+

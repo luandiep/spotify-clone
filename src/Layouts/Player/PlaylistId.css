@@ -1,0 +1,50 @@
+.body__info{
+    display: flex;
+    align-items: flex-end;
+    height: 30vh;
+    max-height: 500px;
+    min-height: 340px;
+    padding: 10px;
+    padding-bottom: 20px;
+    
+}
+.body__info > img {
+    height: 20vw;
+    margin:  0 20px;
+    box-shadow: 0 4px 60px rgba(0,0,0,1);
+
+}
+.body__infoText{
+    flex: 1;
+}
+.body__infoText > h2 {
+    /* font-size: 48px; */
+    margin-bottom: 10px;
+}
+.body__infoText > p {
+    font-size: 14px;
+}
+.body__playlist{
+    height: 100%;
+}
+.action-bar-row{
+    display: flex;
+   padding: 20px 10px; 
+}
+.action-bar-row span{
+    display: inline-block;
+    margin:0 10px ;
+    padding: 10px;
+
+}
+.action-bar-row > .play-action-btn{
+    background-color: #1FDF64;
+    border-radius: 100%;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.action-bar-row > .heart-action-btn{
+    color: rgb(214, 214, 214);
+}
