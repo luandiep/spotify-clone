@@ -9,7 +9,10 @@
     
 }
 .body__info > img {
-    height: 20vw;
+    height: 192px;
+    margin-inline-end: 24px;
+    min-width: 192px;
+    width: 192px;
     margin:  0 20px;
     box-shadow: 0 4px 60px rgba(0,0,0,1);
 
@@ -47,4 +50,13 @@
 }
 .action-bar-row > .heart-action-btn{
     color: rgb(214, 214, 214);
+}
+
+@media (min-width: 1280px)
+{ 
+.body__info > img{
+    height: 232px;
+    min-width: 232px;
+    width: 232px;
+}
 }

@@ -1,5 +1,6 @@
 .sliderbar{
-    width: 30%;
+    max-width: 384px;
+    width: 20%;
     height: 100vh;
     background-color: #040404;
     color: white;

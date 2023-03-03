@@ -1,10 +1,9 @@
 import Table from 'react-bootstrap/Table';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import TimeAgo from 'javascript-time-ago'
-import vi from 'javascript-time-ago/locale/vi.json'
-import React,{useEffect} from 'react'
-import ReactTimeAgo from 'react-time-ago'
+import React from 'react'
 import './TableList.css'
+import CpnTimeAgo from '../CpnTimeAgo/CpnTimeAgo';
+
 function TableList({tracks}) {
     console.log(tracks)
 const convertTimePlay=(ms)=>{
@@ -12,13 +11,6 @@ const convertTimePlay=(ms)=>{
     let  sec = Math.floor((ms/1000) % 60);
     return `${min}:${sec<10?'0'+sec:sec}`;
 }
-useEffect(() => {
-  TimeAgo.addDefaultLocale(vi)
-  return () => {
-    
-  };
-}, [])
-
     return (
         <Table className='text-white' variant="">
         <thead>
@@ -36,7 +28,7 @@ useEffect(() => {
                     <tr>
                     <td><span className='standalone-ellipsis-one-line'>{index+1}</span></td>
                     <td><span className='standalone-ellipsis-one-line'>{item?.track?.name}</span></td>
-                    <td><span className='standalone-ellipsis-one-line'><ReactTimeAgo date={item?.track?.adddate} locale="vi"/></span></td>
+                    <td><span className='standalone-ellipsis-one-line'></span><CpnTimeAgo date={item?.added_at}/></td>
                     <td><span className='standalone-ellipsis-one-line'>{item?.track?.album?.name}</span></td>
                     <td><span className='standalone-ellipsis-one-line'>{convertTimePlay(item?.track?.duration_ms)}</span></td>
                   </tr>
