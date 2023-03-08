@@ -4,21 +4,42 @@ import { Avatar } from '@material-ui/core';
 import './Header.css'
 import { useDataLayerValue } from '../../DataLayer';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 function Header({spotify}) {
-    const [{user},dispatch]=useDataLayerValue();
+    const [{user,scrollPosition,playlist},dispatch]=useDataLayerValue();
     const [isClickInfo,setClickInfo]=useState(false)
+    const [ischeckSearch,setCheckSearch]=useState(false)
+    {console.log(scrollPosition)}
     return (
-        <div className='header'>
+        <div className={ scrollPosition>=400?'header active':'header'}>
             <div className='header__left'>
+                <div className='top-bar-button'>
                 <div className="top-bar-back-button">
-                    <ChevronLeftIcon fontSize='large'/>
+                    <ChevronLeftIcon fontSize='medium'/>
                 </div>
-                <div className="search-bar">
-                    <SearchIcon/>
-                    <input type="text" placeholder='Search for Artists, Song, Album' />   
+                <div className="top-bar-next-button">
+                    <ChevronRightIcon fontSize='medium'/>
                 </div>
+                </div>
+                {scrollPosition>=400&&(
+                      <div className='topbar-content'>
+                        <span className='play-action-btn'><PlayArrowIcon fontSize='large'/></span>
+                        <h4>{playlist?.name}</h4>
+                      </div>
+                )
+                }
+                {
+                    ischeckSearch&&(
+                        <div className="search-bar" >
+                        <SearchIcon/>
+                        <input type="text" placeholder='Search for Artists, Song, Album' />   
+                    </div>
+                    )
+                }
+              
             </div>
             <div className='header__right'>
                 <div className='box__user' onClick={()=>setClickInfo(!isClickInfo)}>

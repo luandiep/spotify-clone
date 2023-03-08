@@ -3,12 +3,9 @@ import './Sidebar.css'
 import HomeIcon from '@material-ui/icons/Home';
 import SearchIcon from '@material-ui/icons/Search';
 import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
-import { useDataLayerValue } from '../../DataLayer';
 import SidebarOption from './Components/SidebarOption';
 import { Link } from 'react-router-dom';
-export default function Sliderbar() {
-  const [{playlists},dispatch]=useDataLayerValue();
-  console.log(playlists)
+ function Sliderbar({playlists}) {
   return (
    
     <div className='sliderbar'>
@@ -23,7 +20,7 @@ export default function Sliderbar() {
         <SidebarOption title='Your Library' Icon={LibraryMusicIcon}/>
         <strong className='sidebar__title'>PLAYLISTS</strong>
         <hr/>
-       
+        { console.log(playlists)}
         {playlists?playlists?.items?.map((item)=>{
            return( 
             <Link to={'playlist/'+item?.id} >
@@ -38,3 +35,4 @@ export default function Sliderbar() {
     </div>
   );
 }
+export default React.memo(Sliderbar)

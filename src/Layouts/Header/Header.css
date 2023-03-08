@@ -6,6 +6,11 @@
     top: 20px;
    
 }
+.header.active{
+background: #131616;
+top: 0;
+padding: 10px 0;
+}
 .header__left{
     flex: 0.7;
     display: flex;
@@ -13,14 +18,37 @@
     margin-left: 20px;
   
 }
-.header__left > .top-bar-back-button{
+.header__left > .top-bar-button {
+    display: flex;
+    gap: 15px;
+}
+.header__left > .top-bar-button > .top-bar-back-button,.top-bar-next-button {
     background:  black;
     border-radius: 100%;
     padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
+
+.header__left > .topbar-content{
+    display: flex;
+    gap: 15px;
+    padding-left: 20px;
+    align-items: center;
+}
+.header__left > .topbar-content > .play-action-btn{
+    background-color: #1FDF64;
+    border-radius: 100%;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px
+
+}
+
 .header__left > .search-bar{
     display: flex;
     align-items: center;

@@ -41,6 +41,6 @@ const convertTimePlay=(ms)=>{
     )
 }
 
-export default TableList
+export default React.memo(TableList)
 
 

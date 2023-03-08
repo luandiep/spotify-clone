@@ -7,20 +7,20 @@ import {useParams } from 'react-router-dom'
 import './PlaylistId.css'
 import SpotifyWebApi from 'spotify-web-api-js';
 import { useDataLayerValue } from '../../DataLayer';
+import SetPlayListsId from '../../Services/Actions/SetPlayListsId';
 const  spotify=new SpotifyWebApi();
 function PlaylistId() {
   let { id } = useParams();
-  const [{token},dispatch]=useDataLayerValue();
-  const [playlist,setPlaylist]=useState()
+  const [{token,playlist},dispatch]=useDataLayerValue();
   useEffect(()=>{
     if(token){
       spotify.setAccessToken(token)
     } 
     spotify.getPlaylist(id).then((playlist)=>{
-      setPlaylist(playlist);
+      dispatch(SetPlayListsId('SET_PLAYLIST',playlist));
     })
   },[id])
-  console.log(playlist)
+  
     return (
         <>
        <div className="body__info">

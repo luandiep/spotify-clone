@@ -1,9 +1,10 @@
 export const initialState={
     user:null,
     playlists:[],
-    playing:false,
-    item:null,
-    token:''
+    token:'',
+    scrollPosition:0,
+    playlist:Object,
+
 }
 
 const reducer=(state,action)=>{
@@ -21,6 +22,16 @@ switch(action.type){
         return{
             ...state,
             playlists:action.playlists
+        };
+    case 'SET_PLAYLIST':
+        return{
+            ...state,
+            playlist:action.playlist
+        };
+    case 'SET_SCROLLPOSITION':
+        return{
+            ...state,
+            scrollPosition:action.scrollPosition
         };
     default:
         return state;
